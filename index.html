@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Another Date?</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="date.css" />
+  </head>
+  <body>
+    <main class="phone-shell">
+      <section class="date-card" aria-live="polite">
+        <img
+          class="flower-banner"
+          src="assets/date/chrysanthemum-lotus.png"
+          alt="Watercolor chrysanthemums and lotus flowers"
+        />
+
+        <div class="step-indicator" aria-label="Date information progress">
+          <span class="dot active" data-dot="intro"></span>
+          <span class="dot" data-dot="day"></span>
+          <span class="dot" data-dot="time"></span>
+          <span class="dot" data-dot="idea"></span>
+          <span class="dot" data-dot="rsvp"></span>
+          <span class="dot" data-dot="send"></span>
+        </div>
+
+        <section class="step active" data-step="intro">
+          <p class="eyebrow">A small question</p>
+          <h1>Would you like to go on another date?</h1>
+
+          <div class="yes-no-wrap">
+            <button class="primary-button" id="yesButton" type="button">
+              Yes
+            </button>
+            <button class="secondary-button" id="noButton" type="button">
+              No
+            </button>
+          </div>
+
+          <div class="no-nudge" id="noNudge" hidden>
+            <p>really? Don't do this to meee?</p>
+            <div class="arrow-row" aria-hidden="true">
+              <span class="arrow-line"></span>
+              <span class="arrow-head"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step="day">
+          <p class="eyebrow">Pick the day</p>
+          <h2>When works best?</h2>
+          <div class="day-grid" role="group" aria-label="Choose a day">
+            <button type="button" data-day="Monday">Mon</button>
+            <button type="button" data-day="Tuesday">Tue</button>
+            <button type="button" data-day="Wednesday">Wed</button>
+            <button type="button" data-day="Thursday">Thu</button>
+            <button type="button" data-day="Friday">Fri</button>
+            <button type="button" data-day="Saturday">Sat</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="time">
+          <p class="eyebrow">Pick the time</p>
+          <h2>What time should I be ready?</h2>
+          <label class="field-label" for="dateTime">Best time</label>
+          <input id="dateTime" type="time" />
+          <div class="time-shortcuts" role="group" aria-label="Quick time choices">
+            <button type="button" data-time="18:00">6:00 PM</button>
+            <button type="button" data-time="19:00">7:00 PM</button>
+            <button type="button" data-time="20:00">8:00 PM</button>
+          </div>
+          <button class="primary-button full" id="timeNext" type="button">
+            Continue
+          </button>
+        </section>
+
+        <section class="step" data-step="idea">
+          <p class="eyebrow">Choose the plan</p>
+          <h2>What kind of date sounds best?</h2>
+          <label class="field-label" for="dateIdea">Date idea</label>
+          <select id="dateIdea">
+            <option value="">Choose one</option>
+            <option value="Gym Date + Steak">Gym Date + Steak</option>
+            <option value="Watching movie or show together">
+              Watching movie or show together
+            </option>
+            <option value="Mall/shopping date">Mall/shopping date</option>
+            <option value="Better idea">Better idea</option>
+          </select>
+
+          <label class="field-label custom-idea" for="customIdea" hidden>
+            Her idea
+          </label>
+          <textarea
+            id="customIdea"
+            rows="3"
+            placeholder="Type the date idea here"
+            hidden
+          ></textarea>
+
+          <button class="primary-button full" id="ideaNext" type="button">
+            Make date information
+          </button>
+        </section>
+
+        <section class="step" data-step="rsvp">
+          <p class="eyebrow">Date information</p>
+          <h2>Here is the date information</h2>
+
+          <div class="rsvp-summary" id="rsvpSummary"></div>
+
+          <div class="actions">
+            <button class="primary-button full" id="confirmButton" type="button">
+              Confirm
+            </button>
+          </div>
+          <p class="save-note" id="saveNote"></p>
+        </section>
+
+        <section class="step" data-step="send">
+          <p class="eyebrow">Almost done</p>
+          <h2>Send this to Brian?</h2>
+          <p class="soft-copy send-copy">
+            Please take a screenshot of your date information and send it to me.
+          </p>
+
+          <div class="rsvp-summary screenshot-summary" id="sendSummary"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="date.js"></script>
+  </body>
+</html>
